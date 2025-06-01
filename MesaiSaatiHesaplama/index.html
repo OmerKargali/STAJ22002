@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesai Saati Hesaplama</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mesai Saati Hesaplama Uygulaması</h1>
+        <form id="workHoursForm">
+            <label for="startTime">İşe Başlangıç Saati:</label>
+            <input type="time" id="startTime" required>
+            <button type="submit">Hesapla</button>
+        </form>
+
+        <div id="result">
+            <p><strong>Mesai Süresi: </strong><span id="workTime">--</span></p>
+            <p><strong>Çıkış Saati: </strong><span id="endTime">--</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

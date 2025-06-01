@@ -1,0 +1,63 @@
+
+	Tüm Görevler sayfasý yapýldý sadece orada indirme butonu olacak  ---------------------------------------------------Yapýldý
+	aciliyet seviyeleri butonlarý eþit büyüklükte olmalý ---------------------------------------------------------------Yapýldý
+	Aciliyet seviyeleri de tamamlandý, tamamlanýyor gibi grafik þeklinde gözüksün tüm görevler kýsmý filtreleme
+	ve sýralama özellikleri bulunsun. ---------------------------------------------------Yapýldý
+	Son tarih ve feedback mekanizmasý gelsin.
+	Scroll ekle görevler aþaðý doðru listelenirse sayfayý sürekli kaydýrmak gerekmesin. Scroll yapýlsýn.
+	Ekip kýsmý açýlýr olsun. 
+	
+
+
+	
+	***************************************Yapýlacak Listesi*********************************
+
+	Ekipteki kiþilerin fotoðraflarý ve isimleri olmalý onlara özel isim atamasý yapýlabilmeli.
+	Sað üstte ayarlar kýsmý olsun görev tamamlama oranýný temizle seçeneði olsun sadece.
+	Sað üstte açýlýr menü içinde görev isimleri (baþlýklarý yer alsýn) kaç madde olduðu yazsýn.
+	Geri Bildirim mekanýzmasý*****
+		Not açýklama alaný eklenmeli
+        		Yapýlýyor ama ne kadarý yapýldý gibi ilerlemesi
+	Tarih ile birlikte saatte ekle.++
+	!!!
+	Görev ekleme kýsmý kategori seçimi olmadan gözükmesin
+	Tüm görevleri listele kýsmý gözükmesin sadece adminde gözüksün
+	Grafiðe týklanýldýðý belirti
+
+ToDoList alaný üçe ayrýlsýn yapýlýyor yapýldý yapýlacak þeklinde
+takvim yazsýýna týklandýðýnda da takvim açýlsýn el ile yazýlmasýn
+
+
+
+	******************************************Liste*****************************************
+
+	Bir ToDoList - CheckList yapýlmalý.
+	Görevler tamamlandýkça ilerleme barý ilerlemeli.
+	Baþlangýçta kart yapýlarý olmalý görev daðýlýmlarýnýn baþlýklarý orada yer almalý.
+	Ekipteki kiþilerin fotoðraflarý ve isimleri olmalý onlara özel isim atamasý yapýlabilmeli.
+	Yapýlan görevleri pdf 
+	Kiþisel ToDo alaný olsun
+	Gece Modu olsun.
+	Sol üstte kiþinin ismi yazsýn kiþi giriþ yaptýktan sonra. Ýsim Soyisim ve Fotosu yer alsýn baþta statik bir foto yer alsýn.
+	Sað üstte ayarlar kýsmý olsun görev tamamlama oranýný temizle seçeneði olsun sadece.
+	Sað üstte açýlýr menü içinde görev isimleri (baþlýklarý yer alsýn) kaç madde olduðu yazsýn.
+
+		görev logosu          içerik
+		kaç madde olduðu
+
+
+        not açýklama alaný eklenmeli
+        yapýlýyor ama ne kadarý yapýldý gibi ilerlemesi
+        aciliyet durumu
+        takvim bazlý görülsü
+	Geri Bildirim mekanýzmasý
+
+	Bir ToDoList yap orada bir kart yapýsý olarak Görev Takip Sistemi olsun herkesin eriþebileceði bir alandan görev takip sistemine 		basýldýðýnda giriþ istesin
+
+	Görev Listesine yazýlacakgörevlerin metin uzunlu
+
+
+	*******************************
+	TaskManagementSystem de dosyayý direkt aktar.
+	bolt hata veriyor onu çöz.
+	Döküman hazýrla.

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Görev Yöneticisi</title>
+    <link rel="stylesheet" href="taskStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="theme-label">
+            <span class="theme-icon">🌙</span>
+            <span class="theme-icon">☀️</span>
+        </label>
+    </div>
+
+
+    <div class="container">
+        <div class="dashboard">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">|||</div>
+                    <div class="stat-info">
+                        <h3>Toplam Görev</h3>
+                        <p id="total-tasks">0</p>
+                    </div>
+                </div>
+                    
+                 <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-info">
+                        <h3>Tamamlanan</h3>
+                        <p id="completed-tasks">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⌛</div>
+                    <div class="stat-info">
+                        <h3>Bekleyen</h3>
+                        <p id="pending-tasks">0</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⌛</div>
+                    <div class="stat-info">
+                        <h3>Görev Takip Sistemi</h3>
+                        <a href="../GorevTakipSistemi/index.html" class="download-btn" style="padding-top: 5px; padding-bottom: 5px;">Sisteme Giriş</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-grid">
+                <div class="chart-card wide">
+                    <canvas id="lineChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <canvas id="pieChart"></canvas>
+                </div>
+                <div class="chart-card">
+                    <canvas id="barChart"></canvas>
+                </div>
+            </div>
+
+            <div class="task-section">
+                <div class="task-form">
+                    <h2>Yeni Görev Ekle</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="task-title">Görev Başlığı</label>
+                            <input type="text" id="task-title" placeholder="Görev Başlığını Giriniz">
+                        </div>
+                        <div class="form-group">
+                            <label for="task-content">Görev İçeriği</label>
+                            <textarea id="task-content" placeholder="Görev Detaylarını Giriniz"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="category-input">Kategori</label>
+                            <select id="category-input">
+                                <option value="">Kategori Seçiniz</option>
+                                <option value="İş">İş</option>
+                                <option value="Kişisel">Kişisel</option>
+                                <option value="Alışveriş">Alışveriş</option>
+                                <option value="Sağlık">Sağlık</option>
+                                <option value="Eğitim">Eğitim</option>
+                                <option value="Diğer">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="due-date">Son Tarih</label>
+                            <input type="date" id="due-date">
+                        </div>
+                        <button id="add-task" class="add-btn">Görevi Ekle</button>
+                    </div>
+                </div>
+
+                <div class="tasks-grid">
+                    <div class="tasks-container active-tasks">
+                        <h2>Aktif Görevler</h2>
+                        <ul id="task-list"></ul>
+                        <button id="download-active-tasks" class="download-btn"> Aktif Görevleri PDF İndir</button>
+                    </div>
+                    <div class="tasks-container completed-tasks">
+                        <h2>Tamamlanan Görevler</h2>
+                        <ul id="completed-task-list"></ul>
+                        <button id="download-completed-tasks" class="download-btn">Tamamlanan Görevleri PDF İndir</button>
+                    </div>
+                    <div class="tasks-container deleted-tasks">
+                        <h2>Silinen Görevler</h2>
+                        <button id="download-delete-tasks" class="download-btn">Silinen Görevleri İndir</button>
+                        <ul id="delete-task-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.1/jspdf.plugin.autotable.min.js"></script>
+    <script src="taskLogic.js"></script>
+</body>
+</html>

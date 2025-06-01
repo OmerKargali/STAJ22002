@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body class="light-mode">
+    <div id="login-page" class="page active">
+        <div class="login-container">
+            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400" alt="Default Profile" class="profile-image">
+            <h2>Görev Yönetim Sistemi</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Kullanıcı Adınız" required>
+                <input type="password" id="password" placeholder="Şifreniz" required>
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-page" class="page">
+        <nav class="sidebar">
+            <div class="user-info">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400" alt="User Profile" class="profile-image">
+                <h3 id="user-name">Ömer</h3>
+                <p id="user-role">Stajyer</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-page="dashboard" class="active">AnaSayfa</a></li>
+                <li><a href="#" data-page="team">Ekip Üyeleri</a></li>
+                <li><a href="#" data-page="tasks">Tüm Görevler</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn">
+                    <span class="light-icon">☀️</span>
+                    <span class="dark-icon">🌙</span>
+                </button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>Hoşgeldin, <span id="header-username">Ömer</span></h1>
+                <div class="header-actions">
+                    <button id="logout-btn">Çıkış Yap</button>
+                </div>
+            </header>
+
+            <div class="charts-container">
+                <div>
+                    <h3>Grafikler</h3>
+                    <span>Sağ tarafta görülen pasta grafiği görev tamamlama yüzdesini göstermektedir. Grafiğin yanında bulunan butonlar ile çeşitli filtrelemeler yapabilirsiniz. Filtreleme yapabilmek için butonlara tıklayabilirsiniz. Tıkladığınız buton durumuna sahip olan görevler pasta grafiğinde gözükmeyecektir.</span>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="taskChart"></canvas>
+                </div>
+            </div>
+            <div class="AnaSayfa">
+                <div class="task-list"></div>
+                <div class="task-categories">
+                    <div class="task-card" data-category="Egitim Planlamasi">
+                        <h3>Eğitim Planlaması</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">5</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Egitim Materyalleri">
+                        <h3>Eğitim Materyalleri</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Egitime Katilim">
+                        <h3>Eğitime Katılım</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Katilim Takip">
+                        <h3>Katılım Takip</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Geri Bildirim">
+                        <h3>Geri Bildirim</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Degerlendirme">
+                        <h3>Degerlendirme</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Sertifikasyon">
+                        <h3>Sertifikasyon</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Egitim Analitigi">
+                        <h3>Eğitim Analitiği</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Egitim Raporlama">
+                        <h3>Eğitim Raporlama</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task-card" data-category="Sinav Basari">
+                        <h3>Sınav Başarı</h3>
+                        <div class="task-stats">
+                            <div class="stat">
+                                <span class="stat-value">3</span>
+                                <span class="stat-label">Toplam</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">1</span>
+                                <span class="stat-label">Kritik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="team-stats" class="team-stats"></div>
+            
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

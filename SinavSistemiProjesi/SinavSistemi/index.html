@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Sınav Sistemi</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="userInfoForm" class="container">
+        <div class="form-container">
+            <div class="form-header">
+                <i class="fas fa-graduation-cap fa-4x" style="color: #3498db;"></i>
+                <h1>Sınav Giriş Formu</h1>
+                <p>Sınava başlamak için bilgilerinizi giriniz</p>
+            </div>
+            
+            <form id="infoForm">
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="firstName" required placeholder="Adınızı giriniz">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-user-tag input-icon"></i>
+                    <input type="text" id="lastName" required placeholder="Soyadınızı giriniz">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="5XXXXXXXXX">
+                </div>
+                
+                <button type="submit">
+                    <i class="fas fa-arrow-right-to-bracket" style="margin-right: 8px;"></i>
+                    Devam Et
+                </button>
+            </form>
+            
+            <div class="form-footer">
+                <p>Eğitim Teknolojileri &copy; 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="instructions" class="container hidden">
+        <h2><i class="fas fa-info-circle" style="margin-right: 10px; color: #3498db;"></i>Sınav Talimatları</h2>
+        <div class="warning-box">
+            <ul>
+                <li>Sınav süresi 30 dakikadır.</li>
+                <li>Toplam 10 soru bulunmaktadır.</li>
+                <li>Her sorunun 5 şıkkı vardır.</li>
+                <li>İstediğiniz soruyu boş bırakabilirsiniz.</li>
+                <li>Sınav başladıktan sonra çıkış yapılamaz.</li>
+                <li>Süre bitiminde sınav otomatik olarak sonlandırılır.</li>
+                <li>Soruların zorluk seviyeleri dengeli dağıtılmıştır.</li>
+            </ul>
+        </div>
+        <button id="startExam">
+            <i class="fas fa-play" style="margin-right: 8px;"></i>
+            Sınavı Başlat
+        </button>
+    </div>
+
+    <div id="examInterface" class="container hidden">
+        <div class="fixed-header">
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="exam-content">
+            <div id="questionContainer">
+                <!-- Sorular buraya gelecek -->
+            </div>
+        </div>
+
+        <div class="fixed-footer">
+            <div class="question-numbers">
+                <!-- Soru numaraları buraya gelecek -->
+            </div>
+            <div class="exam-controls">
+                <div class="timer">
+                    <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                    <span id="timeLeft">30:00</span>
+                    <span>/</span>
+                    <span>30:00</span>
+                </div>
+                <button id="finishExam">
+                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i>
+                    Sınavı Bitir
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="results" class="container hidden">
+        <h2><i class="fas fa-chart-bar" style="margin-right: 10px; color: #3498db;"></i>Sınav Sonuçları</h2>
+        <div class="results-summary">
+            <p><i class="fas fa-stopwatch" style="margin-right: 8px;"></i>Bitirme Süresi: <span id="completionTime"></span></p>
+            <p><i class="fas fa-question-circle" style="margin-right: 8px;"></i>Cevaplanan Soru: <span id="answeredCount"></span></p>
+            <p><i class="fas fa-check" style="margin-right: 8px;"></i>Doğru Sayısı: <span id="correctCount"></span></p>
+            <p><i class="fas fa-times" style="margin-right: 8px;"></i>Yanlış Sayısı: <span id="wrongCount"></span></p>
+        </div>
+        <div id="detailedResults">
+            <!-- Detaylı sonuçlar buraya gelecek -->
+        </div>
+        <button id="downloadResults">
+            <i class="fas fa-file-pdf" style="margin-right: 8px;"></i>
+            Sonuçları İndir (PDF)
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
